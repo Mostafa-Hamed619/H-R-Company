@@ -1,0 +1,66 @@
+*
+{
+    font-family: 'DM Sans', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'PT Serif', serif;
+    
+}
+body
+{
+    overflow: auto;
+}
+
+.nav-item .nav-link.active
+{
+    color: rgb(26, 226, 226);
+}
+.nav-item .nav-link:hover
+{
+    color: teal;
+
+}
+.nav-item .nav-link
+{
+    transition: 1.3 all;
+}
+.font1
+{
+    font-size: 30px;
+}
+.font2
+{
+    color: teal;
+}
+.color1
+{
+    color: teal;
+}
+.bg
+{
+    background-color: teal;
+}
+ul li
+{
+    list-style: none;
+}
+a
+{
+    color: white;
+}
+
+
+.background
+{
+    background-image: url("photos/5.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    
+}
+
+
+i
+{
+    color: teal;
+}

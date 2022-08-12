@@ -1,0 +1,83 @@
+﻿@model Job_App
+@{
+    var info = ViewData["info"] as Project.Models.information;
+}
+
+<section id="careers">
+    <div class="bg mt-5">
+        <h1 class="p-3">join the team</h1>
+    </div>
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <p>
+                    We’re one of the largest transportation and logistics companies in the world, with a mission to help our customers operate in the most efficient ways possible.
+
+                    We do this by providing cutting-edge supply chain solutions to over 50,000 companies, including many of the world's most successful brands.
+
+                    Our work is important, competitive, and satisfying. We're searching for talented individuals at all levels who can deliver the caliber of service our customers require. If you're ready to give us your best, let's talk. We'd like to invest in you.
+
+                    Take a look at our job openings – chances are there are some near you. We’re always on the hunt for talent.
+                </p>
+                <h3>Requirements </h3>
+                <ul>
+                    <li>Dynamic</li>
+                    <li>85% English</li>
+                    <li>Excellent Attitude</li>
+                    <li>Experience in sales or Logistics</li>
+
+                </ul>
+
+
+            </div>
+            <div class="col-md-6">
+                <h3>Fill out the form, we will contact you as soon as possible.</h3>
+                <form method="post">
+                    <label for="first">first name</label><br>
+                    <input type="text" required placeholder="first name" class="form-control" asp-for="FirstName"><br>
+                    <label for="last">last name</label><br>
+                    <input type="text" required placeholder="last name" class="form-control" asp-for="LastName"><br>
+                    <label for="phone">phone</label>
+                    <input type="number" required placeholder="phone" class="form-control" asp-for="Mobile_Phone"><br>
+                    <label for="country">country</label>
+                    <input type="text" required placeholder="country" class="form-control" asp-for="Country">
+                    <label for="city">city</label>
+                    <input type="text" required placeholder="city" class="form-control" asp-for="City"><br>
+                    <button class="btn btn-danger" type="submit">submit</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <div class="mt-4 bg text-white text-center">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="p-4">
+                    <h1>You call, We haul, That’s All!</h1>
+                    <a asp-action="Contact" asp-controller="Home">
+                        <button class="btn btn-danger">contact us</button>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <h3>site map</h3>
+                <ul>
+                    <li><a asp-action="Index" asp-controller="Home">Individual Funding</a></li>
+                    <li><a asp-action="Services" asp-controller="Home">Services</a></li>
+                    <li><a asp-action="About" asp-controller="Home">About Us</a></li>
+                    <li><a asp-action="Career" asp-controller="Home">Careers</a></li>
+                    <li><a asp-action="Blog" asp-controller="Home">Blog</a></li>
+                    <li><a asp-action="Contact" asp-controller="Home">contact us</a></li>
+
+
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h3>Connect with Us</h3>
+                <h6>address:@info.Street</h6>
+                <h6><i class="fa-solid fa-phone"><a href="tel:+1 (213) @info.Phone" style="color:black"><strong>+1 </strong>@info.Phone</a></i></h6>
+
+            </div>
+        </div>
+    </div>
+</section>

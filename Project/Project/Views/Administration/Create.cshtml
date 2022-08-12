@@ -1,0 +1,21 @@
+﻿@model CreateViewModel
+<div class="container" style="padding-top:100px">
+    <div asp-validation-summary="All"></div>
+    <form method="post">
+        <div>
+            <label asp-for="Name"></label>
+            <input asp-for="Name" />
+        </div>
+
+        <div>
+            <label asp-for="Password"></label>
+            <input asp-for="Password" />
+        </div>
+
+        <div>
+            <label asp-for="EmailAddress"></label>
+            <input asp-for="EmailAddress" />
+        </div>
+        <button type="submit">Create</button>
+    </form>
+</div>

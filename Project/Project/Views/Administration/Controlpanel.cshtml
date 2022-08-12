@@ -1,0 +1,189 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@model EditInformationViewModel;
+@inject SignInManager<IdentityUser> signinManager;
+<!DOCTYPE html>
+<html lang="en">
+
+@{ 
+    var contact = ViewData["contact"] as IEnumerable<Project.Models.Contacting>;
+    var NewsLetter = ViewData["NewsLetter"] as IEnumerable<Project.Models.newsLetters>;
+    var JobApp = ViewData["App"] as IEnumerable<Project.Models.Job_App>;
+}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/control.css">
+</head>
+
+<body>
+    <div class="container" style="padding-top:50px">
+        <div class="bg">
+            <h1 class="p-4">control panel</h1>
+        </div>
+        <section id="tables" class="mt-5 text-center">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" class="mt-5">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                            type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+                        customer info
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+                            type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+                        news letter eamil
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
+                            type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
+                        job application
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-info-tab" data-bs-toggle="pill" data-bs-target="#pills-info" type="button"
+                            role="tab" aria-controls="pills-info" aria-selected="false">
+                        edit info
+                    </button>
+                </li>
+
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active mt-5" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
+                     tabindex="0">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">first name</th>
+                                <th scope="col">last name</th>
+                                <th scope="col">phone</th>
+                                <th scope="col">messae</th>
+                                <th scope="col">Email</th>
+                                
+
+
+
+                            </tr>
+                        </thead>
+                        
+                        <tbody class="table-group-divider">
+                            @foreach (var con in contact)
+                            {
+                                <tr>
+                                    <th scope="row">@con.Id</th>
+                                    <td>@con.FirstName</td>
+                                    <td>@con.LastName</td>
+                                    <td>@con.PhoneNumber</td>
+                                    @if (@con.Message == null)
+                                    {
+                                        <td>No Message </td>
+                                    }
+                                    else
+                                    {
+                                        <td>@con.Message</td>
+                                    }
+                                    <td>@con.Email</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">email</th>
+                                <th scope="col">sending News</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+
+                            @foreach (var News in NewsLetter)
+                                
+                            {
+                            <tr>
+                                <th scope="row">@News.id</th>
+                                <td>@News.Email</td>
+                                @if(News.send == null)
+                                {
+                                    <td>No Emailing</td>
+                                }
+                                else
+                                {
+                                            <td>@News.send</td>
+                                }
+                                
+                            </tr>
+                                    }
+                                  
+
+                            </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                
+                                <th scope="col">id</th>
+                                <th scope="col">first name</th>
+                                <th scope="col">last name</th>
+                                <th scope="col">Country</th>
+                                <th scope="col">City</th>
+                                <th scope="col">Mobile Phone</th>
+
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            @foreach (var job in JobApp)
+                            {
+                                <tr>
+                                    <th scope="row">@job.id</th>
+                                    <td>@job.FirstName</td>
+                                    <td>@job.LastName</td>
+                                    <td>@job.Country</td>
+                                    <td>@job.City</td>
+                                    <td>@job.Mobile_Phone</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="pills-info" role="tabpanel" aria-labelledby="pills-info-tab" tabindex="0">
+                  
+                    <div class="w-75 text-center mx-auto mt-5">
+                            <a asp-action="Edit" asp-controller="Administration">
+                                <button class="btn btn-success mt-5">Update Information</button>
+                            </a> 
+                    </div>
+                </div>
+            </div>
+
+            @if (signinManager.IsSignedIn(User))
+            {
+                <form method="post" asp-action="LogOut" asp-controller="Administration">
+                    <button type="submit" class="nav-link btn btn-link py-0"style="width:auto">
+                        LogOut  @User.Identity.Name
+                    </button>
+                </form>
+            }
+    </div>
+   
+
+    </section>
+    <script src="JAVA SCRIPT/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+﻿@{
+    var info = ViewData["info"] as Project.Models.information;
+}
+
+<section id="about-us">
+    <div class="bg mt-5 text-white">
+        <h2 class="p-4">about us</h2>
+    </div>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <img src="~/photos/container.jpg" class="w-100">
+            </div>
+            <div class="col-md-6">
+                <h2 class="mb-3">H&W Logistics Group</h2>
+                <h3>
+                    We are a company dedicated to the growth of our associates, focusing on doing a premium quality job, knowing that our client goes first.
+
+                </h3>
+            </div>
+        </div>
+        <div class="bg mt-5 text-center text-white">
+            <h2 class="p-3">who are we?</h2>
+
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <img src="~/photos/10.jpg" class="w-100">
+
+            </div>
+            <div class="col-md-6">
+                <h2>WHO ARE WE?</h2>
+                <h3>
+                    We are a company dedicated to the growth of our associates, focusing on meeting and exceeding our customer’s expectations and experience when working with us.
+
+                    H&W is a company based out of Miami, Florida which was founded in 2015 by Andre Corbert. We started as a small operation with 4 guys and a few years of experience in the auto hauling business.
+                </h3>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4 bg text-white text-center">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="p-4">
+                    <h1>You call, We haul, That’s All!</h1>
+                    <a asp-action="Contact" asp-controller="Home">
+                        <button class="btn btn-danger">contact us</button>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <h3>site map</h3>
+                <ul>
+                    <li><a asp-action="Index" asp-controller="Home">Individual Funding</a></li>
+                    <li><a asp-action="Services" asp-controller="Home">Services</a></li>
+                    <li><a asp-action="About" asp-controller="Home">About Us</a></li>
+                    <li><a asp-action="Career" asp-controller="Home">Careers</a></li>
+                    <li><a asp-action="Blog" asp-controller="Home">Blog</a></li>
+                    <li><a asp-action="Contact" asp-controller="Home">contact us</a></li>
+
+
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h3>Connect with Us</h3>
+                <h6>address:@info.Street</h6>
+                <h6><i class="fa-solid fa-phone"><a href="tel:+1 (213) @info.Phone" style="color:black"><strong>+1 </strong>@info.Phone</a></i></h6>
+
+            </div>
+        </div>
+    </div>
+</section>

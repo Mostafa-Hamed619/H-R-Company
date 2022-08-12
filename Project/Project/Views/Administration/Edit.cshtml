@@ -1,0 +1,32 @@
+﻿@model EditInformationViewModel
+<form method="post" asp-action="Edit" asp-controller="Administration">
+
+    <input hidden asp-for="id" />
+    <div>
+        <label asp-for="Country">Country</label>
+        <input type="text" class="form-control" asp-for="Country" />
+
+    </div>
+
+    <div>
+        <label>City</label>
+        <input type="text" class="form-control" asp-for="City" />
+    </div>
+
+    <div>
+        <label>Email</label>
+        <input type="text" class="form-control" asp-for="EmaiAddress" />
+    </div>
+
+    <div>
+        <label>Phone Number</label>
+        <input type="text" class="form-control" asp-for="Phone" />
+    </div>
+    <div>
+        <label>Address Street</label>
+        <input class="form-control"  asp-for="Street" />
+    </div>
+   
+        <button class="btn btn-success mt-5" type="submit">Update</button>
+
+</form>

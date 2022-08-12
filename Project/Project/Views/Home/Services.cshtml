@@ -1,0 +1,63 @@
+﻿@{
+    var info = ViewData["info"] as Project.Models.information;
+}
+
+<section id="services">
+    <div class="background d-flex justify-content-center align-items-center h-100">
+        <img src="~/photos/5.jpg" class="w-100" style="height:750px;" />
+
+    </div>
+    <div class="container mt-5" style="padding:50px">
+        <h1 class="text-center fw-bolder">our services</h1>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <img src="~/photos/s1.png" asp-append-version="true" class="w-100">
+                <h3>MACHINERY TRANSPORTATION</h3>
+                <p>We work directly with over 100 dealerships and auctions all over the united states as well as thousands of companies and individuals.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="~/photos/s2.jpeg" asp-append-version="true" class="w-100">
+                <h3>TRANSPORTATION OF PRODUCE AND RAW MATERIALS</h3>
+                <p>We work to guarantee the efficient transportation of your load by collecting all the necessary information and doing research to ensure the safe arrival of your load to its final destination.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="~/photos/s3.jfif" asp-append-version="true" class="w-100">
+                <h3>INTERNATIONAL TRANSPORT</h3>
+                <p>We count with affiliations with shipping lines and freight forwarders that allow us to transport from anywhere to any place, allowing us to offer options such as: </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4 bg text-white text-center">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="p-4">
+                    <h1>You call, We haul, That’s All!</h1>
+                    <a asp-action="Contact" asp-controller="Home">
+                        <button class="btn btn-danger">contact us</button>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <h3>site map</h3>
+                <ul>
+                    <li><a asp-action="Index" asp-controller="Home">Individual Funding</a></li>
+                    <li><a asp-action="Services" asp-controller="Home">Services</a></li>
+                    <li><a asp-action="About" asp-controller="Home">About Us</a></li>
+                    <li><a asp-action="Career" asp-controller="Home">Careers</a></li>
+                    <li><a asp-action="Blog" asp-controller="Home">Blog</a></li>
+                    <li><a asp-action="Contact" asp-controller="Home">contact us</a></li>
+
+
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h3>Connect with Us</h3>
+                <h6>address:@info.Street</h6>
+                <h6><i class="fa-solid fa-phone"><a href="tel:+1 (213) @info.Phone" style="color:black"><strong>+1 </strong>@info.Phone</a></i></h6>
+
+            </div>
+        </div>
+    </div>
+
+</section>
